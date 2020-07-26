@@ -1,5 +1,7 @@
-This repository helps to resolve the Workplace / Facebook integration problem with Microsoft Bto Framework.
+<h2>Workplace Integration with Azure Bot Framework</h2>
 
+<b>This repository helps to resolve the Workplace / Facebook integration problem with Microsoft Bot Framework.
+Below are the steps followed in this repository for establising connection between Facebook /Workplace and Microsoft Bot Framework</b>
 
 1) Install the Facebook Adapter Nuget Package using the below script in the Package Manager Console
 
@@ -7,26 +9,25 @@ This repository helps to resolve the Workplace / Facebook integration problem wi
 
 2) Create an Adapter Class for Handling requests from FB / Worplace like the one below.
 
-    	public class AdapterWithFBErrorHandler : FacebookAdapter
-        	{
-        	public AdapterWithFBErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger)
-            	: base(configuration, logger)
-        	{
-            OnTurnError = async (turnContext, exception) =>
-            {
-                // Log any leaked exception from the application.
-                logger.LogError(exception, $"[OnTurnError] unhandled error : {exception.Message}");
+		public class AdapterWithFBErrorHandler : FacebookAdapter
+		{
+			public AdapterWithFBErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger)
+			    : base(configuration, logger)
+			{
+			    OnTurnError = async (turnContext, exception) =>
+			    {
+				// Log any leaked exception from the application.
+				logger.LogError(exception, $"[OnTurnError] unhandled error : {exception.Message}");
 
-                // Send a message to the user
-                await turnContext.SendActivityAsync("The bot encountered an error or bug.");
-                await turnContext.SendActivityAsync("To continue to run this bot, please fix the bot source code.");
+				// Send a message to the user
+				await turnContext.SendActivityAsync("The bot encountered an error or bug.");
+				await turnContext.SendActivityAsync("To continue to run this bot, please fix the bot source code.");
 
-                // Send a trace activity, which will be displayed in the Bot Framework Emulator
-                await turnContext.TraceActivityAsync("OnTurnError Trace", exception.Message, "https://www.botframework.com/schemas/error", "TurnError");
-            };
-        }
-    }
-
+				// Send a trace activity, which will be displayed in the Bot Framework Emulator
+				await turnContext.TraceActivityAsync("OnTurnError Trace", exception.Message, "https://www.botframework.com/schemas/error", "TurnError");
+			    };
+			}
+	    	}
 3) Register the created Adapter class in Startup.cs file as below.
 
 		// Create the FB Adapter for handling requests from FB / Workplace
@@ -62,5 +63,8 @@ This can be achieved by creating a controller in BotController.cs file.
 	"FacebookVerifyToken": "", // You can create an unique token which needs to be configured in Facebook / Workplace
   	"FacebookAppSecret": "", // App Secret taken from FB when creating App in FB for Chatbot
   	"FacebookAccessToken": ""// Access token taken from FB when creating App in FB for Chatbot
+
+<b>Note : In Facebook / Workplace configurations, specify your App Service end point as the one like below.
+	https://yoursite.azurewebsites.net/api/facebook along with the FacebookVerifyToken you created in appsettings.json. </b>
 
  Happy Coding!!
