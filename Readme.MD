@@ -1,14 +1,17 @@
+This repository helps to resolve the Workplace / Facebook integration problem with Microsoft Bto Framework.
+
+
 1) Install the Facebook Adapter Nuget Package using the below script in the Package Manager Console
 
-Install-Package Microsoft.Bot.Builder.Adapters.Facebook
+    	Install-Package Microsoft.Bot.Builder.Adapters.Facebook
 
 2) Create an Adapter Class for Handling requests from FB / Worplace like the one below.
 
-public class AdapterWithFBErrorHandler : FacebookAdapter
-    {
-        public AdapterWithFBErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger)
-            : base(configuration, logger)
-        {
+    	public class AdapterWithFBErrorHandler : FacebookAdapter
+        	{
+        	public AdapterWithFBErrorHandler(IConfiguration configuration, ILogger<BotFrameworkHttpAdapter> logger)
+            	: base(configuration, logger)
+        	{
             OnTurnError = async (turnContext, exception) =>
             {
                 // Log any leaked exception from the application.
@@ -26,16 +29,16 @@ public class AdapterWithFBErrorHandler : FacebookAdapter
 
 3) Register the created Adapter class in Startup.cs file as below.
 
-// Create the FB Adapter for handling requests from FB / Workplace
-services.AddSingleton<FacebookAdapter, AdapterWithFBErrorHandler>();
+		// Create the FB Adapter for handling requests from FB / Workplace
+		services.AddSingleton<FacebookAdapter, AdapterWithFBErrorHandler>();
 
 4) Next step is to create an endpoint for handling requests from FB / Workplace
 This can be achieved by creating a controller in BotController.cs file.
 
-[Route("api/facebook")]
-    [ApiController]
-    public class FBController : ControllerBase
-    {
+		[Route("api/facebook")]
+    	[ApiController]
+    	public class FBController : ControllerBase
+    	{
         private readonly IBotFrameworkHttpAdapter Adapter;
         private readonly IBot Bot;
 
@@ -56,8 +59,8 @@ This can be achieved by creating a controller in BotController.cs file.
 
 5) To establish connection between Facebook and Azure, create a verify token and store in appsetting.json file like below.
 
-"FacebookVerifyToken": "", // You can create an unique token which needs to be configured in Facebook / Workplace
-  "FacebookAppSecret": "", // App Secret taken from FB when creating App in FB for Chatbot
-  "FacebookAccessToken": ""// Access token taken from FB when creating App in FB for Chatbot
+	"FacebookVerifyToken": "", // You can create an unique token which needs to be configured in Facebook / Workplace
+  	"FacebookAppSecret": "", // App Secret taken from FB when creating App in FB for Chatbot
+  	"FacebookAccessToken": ""// Access token taken from FB when creating App in FB for Chatbot
 
- 
+ Happy Coding!!
