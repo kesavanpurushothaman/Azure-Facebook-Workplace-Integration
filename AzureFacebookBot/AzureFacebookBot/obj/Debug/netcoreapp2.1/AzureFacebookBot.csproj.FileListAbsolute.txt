@@ -1,0 +1,15 @@
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\bin\Debug\netcoreapp2.1\appsettings.json
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\bin\Debug\netcoreapp2.1\AzureFacebookBot.deps.json
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\bin\Debug\netcoreapp2.1\AzureFacebookBot.runtimeconfig.json
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\bin\Debug\netcoreapp2.1\AzureFacebookBot.runtimeconfig.dev.json
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\bin\Debug\netcoreapp2.1\AzureFacebookBot.dll
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\bin\Debug\netcoreapp2.1\AzureFacebookBot.pdb
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.csprojAssemblyReference.cache
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.csproj.CoreCompileInputs.cache
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.RazorAssemblyInfo.cache
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.RazorAssemblyInfo.cs
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.AssemblyInfoInputs.cache
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.AssemblyInfo.cs
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.RazorTargetAssemblyInfo.cache
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.dll
+H:\Kesavan\Learning\Azure BOT\AzureFacebookBot\AzureFacebookBot\obj\Debug\netcoreapp2.1\AzureFacebookBot.pdb
